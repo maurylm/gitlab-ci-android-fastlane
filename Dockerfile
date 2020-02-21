@@ -30,7 +30,17 @@ RUN apt-get -y install --no-install-recommends \
     ruby2.4-dev \
     build-essential \
     file \
-    ssh
+    ssh \
+    sudo
+
+# Install node
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN sudo apt-get install gcc g++ make
+RUN sudo apt-get install -y nodejs
+RUN node --version
+RUN npm --version
+RUN npm install -g firebase-tools
+RUN firebase --version 
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip /tools.zip
 RUN unzip /tools.zip -d /sdk && rm -rf /tools.zip
