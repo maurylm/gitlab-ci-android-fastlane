@@ -22,7 +22,7 @@ RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
 RUN apt-get -y install --no-install-recommends \
     curl \
-    openjdk-8-jdk \
+    openjdk-11-jdk \
     unzip \
     zip \
     git \
